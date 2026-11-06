@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VitalLife – Healthy Lifestyle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="#home" class="logo">💚 VitalLife</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+  <nav id="menu">
+    <a href="#home">Home</a><a href="#food">Healthy Food</a><a href="#exercise">Exercise</a>
+    <a href="#sleep">Sleep</a><a href="#tools">Tools</a><a href="#articles">Articles</a>
+    <a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    <button id="themeBtn" aria-label="Switch dark or light mode">🌙</button>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <p class="tag">A healthier you starts today</p>
+  <h1>Eat Well, Move More, <span>Live Better.</span></h1>
+  <p class="sub">Simple food, exercise, sleep and hydration habits you can start this week.</p>
+  <a href="#tools" class="btn">Try Health Tools</a>
+  <div class="counters">
+    <div><b data-target="10000">0</b><small>Daily steps goal</small></div>
+    <div><b data-target="8">0</b><small>Glasses of water</small></div>
+    <div><b data-target="7">0</b><small>Hours of sleep</small></div>
+    <div><b data-target="30">0</b><small>Minutes of activity</small></div>
+  </div>
+</section>
+
+<section class="tip-bar">
+  <p>💡 <span id="tipText">Loading tip…</span></p>
+  <button class="btn small" id="tipBtn">New tip</button>
+</section>
+
+<section id="food" class="section">
+  <h2>Healthy Food</h2>
+  <p class="lead">Fill your plate with real food. Colour means nutrients.</p>
+  <div class="grid">
+    <article class="card"><div class="ico">🥗</div><h3>Fruits & Vegetables</h3><p>Aim for five portions a day. They supply fibre, vitamins and potassium.</p></article>
+    <article class="card"><div class="ico">🌾</div><h3>Whole Grains</h3><p>Ragi, brown rice, oats and millets keep you full for longer.</p></article>
+    <article class="card"><div class="ico">🥜</div><h3>Protein</h3><p>Dals, eggs, curd, nuts and sprouts help muscles repair and grow.</p></article>
+    <article class="card"><div class="ico">🍬</div><h3>Cut Back</h3><p>Limit sugary drinks, deep-fried snacks and packaged foods.</p></article>
+  </div>
+</section>
+
+<section id="exercise" class="section alt">
+  <h2>Exercise & Fitness</h2>
+  <p class="lead">You do not need a gym. Start with 30 minutes a day.</p>
+  <div class="grid">
+    <article class="card"><div class="ico">🚶</div><h3>Walking</h3><p>Brisk walking for 30 minutes protects the heart and lifts mood.</p></article>
+    <article class="card"><div class="ico">🧘</div><h3>Yoga & Stretching</h3><p>Improves flexibility, posture and reduces stress.</p></article>
+    <article class="card"><div class="ico">🏋️</div><h3>Strength</h3><p>Squats, push-ups and planks twice a week build strong bones.</p></article>
+    <article class="card"><div class="ico">🚴</div><h3>Cardio</h3><p>Cycling, skipping or swimming raises stamina.</p></article>
+  </div>
+</section>
+
+<section id="sleep" class="section">
+  <h2>Sleep & Hydration</h2>
+  <div class="two">
+    <div class="card wide"><h3>😴 Better Sleep</h3>
+      <ul><li>Sleep and wake at the same time daily</li><li>Keep screens away 30 minutes before bed</li><li>Keep the room dark, cool and quiet</li><li>Avoid caffeine after 4 PM</li></ul></div>
+    <div class="card wide"><h3>💧 Stay Hydrated</h3>
+      <ul><li>Start the day with a glass of water</li><li>Carry a bottle with you</li><li>Drink more in hot weather and after exercise</li><li>Pale yellow urine means you are well hydrated</li></ul></div>
+  </div>
+</section>
+
+<section id="tools" class="section alt">
+  <h2>Interactive Health Tools</h2>
+  <div class="tools">
+
+    <div class="card tool">
+      <h3>⚖️ BMI Calculator</h3>
+      <label>Weight (kg)<input type="number" id="bmiW" min="1" placeholder="e.g. 62"></label>
+      <label>Height (cm)<input type="number" id="bmiH" min="1" placeholder="e.g. 168"></label>
+      <button class="btn small" id="bmiBtn">Calculate BMI</button>
+      <p class="result" id="bmiOut" aria-live="polite"></p>
+    </div>
+
+    <div class="card tool">
+      <h3>💧 Water Intake Calculator</h3>
+      <label>Weight (kg)<input type="number" id="wW" min="1" placeholder="e.g. 62"></label>
+      <label>Activity level
+        <select id="wA"><option value="0">Low</option><option value="0.5" selected>Moderate</option><option value="1">High</option></select></label>
+      <button class="btn small" id="wBtn">Calculate</button>
+      <p class="result" id="wOut" aria-live="polite"></p>
+    </div>
+
+    <div class="card tool">
+      <h3>⏱️ Exercise Stopwatch</h3>
+      <div class="clock" id="clock">00:00:00</div>
+      <div class="row">
+        <button class="btn small" id="swStart">Start</button>
+        <button class="btn small ghost" id="swStop">Pause</button>
+        <button class="btn small ghost" id="swReset">Reset</button>
+      </div>
+      <p class="result" id="swLog"></p>
+    </div>
+
+    <div class="card tool">
+      <h3>✅ Daily Habit Tracker</h3>
+      <ul class="habits" id="habits"></ul>
+      <div class="bar"><div id="bar"></div></div>
+      <p class="result" id="progressText">0 of 6 habits done</p>
+      <button class="btn small ghost" id="habitReset">Reset day</button>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <h2>Health Quiz</h2>
+  <div class="card quiz">
+    <p class="qcount" id="qCount"></p>
+    <h3 id="qText"></h3>
+    <div id="qOpts" class="opts"></div>
+    <p class="result" id="qMsg" aria-live="polite"></p>
+    <button class="btn small" id="qNext" hidden>Next question</button>
+  </div>
+</section>
+
+<section id="articles" class="section alt">
+  <h2>Health Awareness Articles</h2>
+  <div class="grid three">
+    <article class="card"><h3>Why Breakfast Matters</h3><p>A balanced breakfast steadies blood sugar and helps you focus in the morning.</p><details><summary>Read more</summary><p>Include protein and fibre, such as idli with sambar, eggs with toast, or oats with fruit.</p></details></article>
+    <article class="card"><h3>Sitting Is the New Smoking?</h3><p>Long hours of sitting raise health risks even if you exercise.</p><details><summary>Read more</summary><p>Stand and stretch every 45 minutes. Take short walking breaks during study or work.</p></details></article>
+    <article class="card"><h3>Mental Health Matters</h3><p>Stress, anxiety and low mood are health issues too.</p><details><summary>Read more</summary><p>Talk to someone you trust, spend time outdoors and ask a professional for help when needed.</p></details></article>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <h2>Gallery</h2>
+  <div class="gallery" id="gallery-grid"></div>
+  <div class="video-wrap">
+    <h3>Watch: 10-minute morning workout</h3>
+    <div class="video"><iframe src="https://www.youtube.com/embed/ml6cT4AZdqI" title="Morning workout video" loading="lazy" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<section id="contact" class="section alt">
+  <h2>Contact Us</h2>
+  <form class="card form" id="form" novalidate>
+    <label>Your name<input id="cName" placeholder="Enter your name"></label>
+    <label>Email<input id="cMail" type="email" placeholder="Enter your email"></label>
+    <label>Message<textarea id="cMsg" rows="4" placeholder="Write your message"></textarea></label>
+    <p class="result" id="formMsg" aria-live="polite"></p>
+    <button class="btn" type="submit">Send message</button>
+  </form>
+</section>
+
+<footer><p>© 2026 VitalLife. For education only. It is not medical advice. Consult a doctor for health concerns.</p></footer>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+<script src="script.js"></script>
+</body>
+</html>
